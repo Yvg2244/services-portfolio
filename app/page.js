@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {
   Navbar,
   Collapse,
+  Carousel,
   Typography,
   Button,
   IconButton,
@@ -125,7 +126,6 @@ export default function Home() {
               className="rounded-lg mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
               size="sm"
               fullWidth
-              
             >
               <span>Lets Connect</span>
             </Button>
@@ -133,7 +133,7 @@ export default function Home() {
         </Collapse>
       </Navbar>
       <main className="flex min-h-screen flex-col items-center justify-between  bg-primary z-[-1] tracking-wide text-white text-[16px]">
-        <section className="flex flex-col relative top-4 pb-[10rem] mb-[5rem]  items-center justify-center gap-[70px]">
+        <section className="flex flex-col relative top-4 pt-[4rem] pb-[5rem]  items-center justify-center gap-[70px]">
           <Image
             alt="background effect"
             className="z-[10]"
@@ -160,6 +160,201 @@ export default function Home() {
             Contact Us
           </Button>
         </section>
+        <article className="flex  flex-col text-center items-center justify-center mt-4 mb-10">
+          <h1 className="flex z-[20] flex-col  text-[30px]  font-bold  ">
+            Our Work
+          </h1>
+          <p className="px-[10px] text-center opacity-70 mt-[1rem]">
+            Here&apos;s the display of what we have done till now.
+          </p>
+          <div className="relative flex flex-col items-center mt-[1.25rem] py-[1rem] h-auto w-[100vw] bg-[#1E1A25] ">
+            <div className="w-[100vw] h-[3rem] bg-black absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></div>
+            <Carousel className="rounded-xl relative my-4 px-2 mx-2 bg-[#1E1A25] py-[4rem]">
+              <div className="px-4 h-full w-full">
+                <Image
+                  src={project1}
+                  alt="project devsclash"
+                  className="h-full w-full object-cover"
+                />
+                <div className="inset-0 grid h-full w-full place-items-center bg-[#1E1A25]">
+                  <div className="w-3/4 text-center md:w-2/4">
+                    <Typography
+                      variant="h1"
+                      color="white"
+                      className="mb-4 mt-4 text-xl md:text-4xl lg:text-5xl"
+                    >
+                      DevsClash
+                    </Typography>
+                    <Typography
+                      variant="lead"
+                      color="white"
+                      className="mb-12 text-md opacity-80"
+                    >
+                      1v1 online coding platform with winner takes all model.
+                      Let&apos;s add more thrill and excitement to old and
+                      boring contests.
+                    </Typography>
+                    <div className="flex justify-center gap-2">
+                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white" >
+                        Code Link
+                      </Button>
+                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"  variant="text">
+                        Deployed Link
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="px-4 h-full w-full">
+                <Image
+                  src={project2}
+                  alt="project redowl"
+                  className="h-full w-full object-cover"
+                />
+                <div className="inset-0 grid h-full w-full place-items-center bg-[#1E1A25]">
+                  <div className="w-3/4 text-center md:w-2/4">
+                    <Typography
+                      variant="h1"
+                      color="white"
+                      className="mb-4 mt-4 text-xl md:text-4xl lg:text-5xl"
+                    >
+                      RedOwl Schools
+                    </Typography>
+                    <Typography
+                      variant="lead"
+                      color="white"
+                      className="mb-12 text-md opacity-80"
+                    >
+                      Landing page for RedOwl School&apos;s erp servicves. RedQwl provides all the smart infrastructure and erp services needed for best in class school facilities.
+                    </Typography>
+                    <div className="flex justify-center gap-2">
+                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white" >
+                        Code Link
+                      </Button>
+                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"  variant="text">
+                        Deployed Link
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* <div className="relative h-full w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                alt="image 2"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+                <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                  >
+                    The Beauty of Nature
+                  </Typography>
+                  <Typography
+                    variant="lead"
+                    color="white"
+                    className="mb-12 opacity-80"
+                  >
+                    It is not so much for its beauty that the forest makes a
+                    claim upon men&apos;s hearts, as for that subtle something,
+                    that quality of air that emanation from old trees, that so
+                    wonderfully changes and renews a weary spirit.
+                  </Typography>
+                  <div className="flex gap-2">
+                    <Button size="lg" color="white">
+                      Explore
+                    </Button>
+                    <Button size="lg" color="white" variant="text">
+                      Gallery
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-full w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                alt="image 3"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+                <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+                  <Typography
+                    variant="h1"
+                    color="white"
+                    className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                  >
+                    The Beauty of Nature
+                  </Typography>
+                  <Typography
+                    variant="lead"
+                    color="white"
+                    className="mb-12 opacity-80"
+                  >
+                    It is not so much for its beauty that the forest makes a
+                    claim upon men&apos;s hearts, as for that subtle something,
+                    that quality of air that emanation from old trees, that so
+                    wonderfully changes and renews a weary spirit.
+                  </Typography>
+                  <div className="flex gap-2">
+                    <Button size="lg" color="white">
+                      Explore
+                    </Button>
+                    <Button size="lg" color="white" variant="text">
+                      Gallery
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            </Carousel>
+            <div className="w-[100vw] h-[3rem] bg-black absolute bottom-[-1rem] rounded-tl-[45%] rounded-tr-[45%]"></div>
+          </div>
+          {/* <Box className="flex mt-[6rem] ">
+          <Container className="relative flex flex-col items-center py-[3rem] h-auto w-[100vw] bg-[#1E1A25] ">
+            <Container className="w-[100vw] h-[3rem] bg-primary absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></Container>
+            <Image
+              alt=""
+              src={project1}
+              height={200}
+              className="mt-[3rem] mb-[2rem]"
+            />
+            <Container className="flex flex-col w-full items-start gap-6">
+              <Container className="flex text-[10px] gap-4">
+                <div className="justify-center items-center py-[12px] px-[20px] border-[#EE4578] border-[1px] bg-[#852F4E] rounded-[1.5rem]">
+                  React
+                </div>
+                <div className="justify-center items-center py-[12px] px-[20px] border-[#EE4578] border-[1px] bg-[#852F4E] rounded-[1.5rem]">
+                  Python
+                </div>
+                <div className="justify-center items-center py-[12px] px-[20px] border-[#EE4578] border-[1px] bg-[#852F4E] rounded-[1.5rem]">
+                  Tailwind
+                </div>
+              </Container>
+              <h3 className="text-2xl font-bold">DevsClash</h3>
+              <p className="w-full text-start leading-7">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatum aliquid unde dolorum assumenda. Unde libero atque
+                similique adipisci recusandae distinctio et blanditiis nostrum
+                cum eveniet provident fugiat iusto, incidunt fuga!
+              </p>
+              <Container className="flex text-[12px] font-semibold gap-4">
+                <div className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md">
+                  Code Link
+                </div>
+                <div className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md">
+                  Deploy Link
+                </div>
+              </Container>
+            </Container>
+            <Container className="w-[100vw] h-[3rem] bg-primary absolute bottom-[-1rem] rounded-tl-[45%] rounded-tr-[45%]"></Container>
+          </Container>
+        </Box> */}
+        </article>
       </main>
     </div>
   );
