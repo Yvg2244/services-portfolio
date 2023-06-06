@@ -73,8 +73,8 @@ export default function Home() {
     </ul>
   );
   return (
-    <div className="bg-black">
-      <Navbar className="mx-auto bg-transparent border-none max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <div className="bg-black ">
+      <Navbar className="mx-0 bg-transparent border-none max-w-screen-xl py-2 px-4 lg:px-4 lg:py-4">
         <div className="container mx-auto flex items-center justify-between text-white">
           <Typography
             as="a"
@@ -87,9 +87,9 @@ export default function Home() {
           <Button
             variant="gradient"
             size="sm"
-            className="hidden lg:inline-block"
+            className="rounded-lg hidden lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            <span>Buy Now</span>
+         Lets Work Togehter!
           </Button>
           <IconButton
             variant="text"
@@ -144,8 +144,8 @@ export default function Home() {
           </div>
         </Collapse>
       </Navbar>
-      <main className="flex min-h-screen flex-col items-center justify-between  bg-primary z-[-1] tracking-wide text-white text-[16px]">
-        <section className="flex flex-col relative top-4 pt-[4rem] pb-[5rem]  items-center justify-center gap-[70px]">
+      <main className="flex min-h-screen flex-col items-center  justify-between  bg-primary z-[-1] tracking-wide text-white text-[16px]">
+        <section className="flex flex-col md:px-[5rem] relative lg:w-[100vw] lg:px-0 top-4 pt-[4rem] pb-[5rem]  items-center justify-center gap-[70px]">
           <Image
             alt="background effect"
             className="z-[10]"
@@ -182,7 +182,7 @@ export default function Home() {
           <div className="relative flex flex-col items-center mt-[1.25rem] py-[1rem] h-auto w-[100vw] bg-[#1E1A25] ">
             <div className="w-[100vw] h-[3rem] bg-black absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></div>
             <Carousel className="rounded-xl relative my-4 px-2 mx-2 bg-[#1E1A25] py-[4rem]">
-              <div className="px-4 h-full w-full">
+              <div className="px-4 lg:flex lg:flex-row justify-center items-center lg:h-auto h-full w-full">
                 <Image
                   src={project1}
                   alt="project devsclash"
@@ -224,7 +224,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="px-4 h-full w-full">
+              <div className="px-4 lg:flex lg:flex-row justify-center items-center lg:h-auto h-full w-full">
                 <Image
                   src={project2}
                   alt="project redowl"
@@ -389,32 +389,32 @@ export default function Home() {
           <p className="px-[10px] text-center opacity-70 mt-[1rem]">
             Building Digital Dreams: Our Web Services Bring Your Vision to Life{" "}
           </p>
-          <div className="flex flex-col text-[16px] font-bold gap-5 mt-6 mb-10">
-            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+          <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center p-[16px] font-bold gap-5 mt-6 mb-10">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] md:w-[17rem] rounded-md items-start gap-2">
               <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
                 <Image alt="" height={25} src={icon_frontend} />
               </div>
               <p>Full stack developement</p>
             </div>
-            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] md:w-[17rem] rounded-md items-start gap-2">
               <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
                 <Image alt="" height={25} src={icon_seo} />
               </div>
               <p>Search Engine Optimizations</p>
             </div>
-            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] md:w-[17rem] rounded-md items-start gap-2">
               <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
                 <Image alt="" height={25} src={icon_ui} />
               </div>
               <p>UI/UX prototyping</p>
             </div>
-            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] md:w-[17rem] rounded-md items-start gap-2">
               <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
                 <Image alt="" height={25} src={icon_ui} />
               </div>
               <p>Seamless User Interface</p>
             </div>
-            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] md:w-[17rem] rounded-md items-start gap-2">
               <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
                 <Image alt="" height={25} src={icon_cross} />
               </div>
