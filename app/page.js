@@ -5,6 +5,9 @@ import {
   Collapse,
   Carousel,
   Typography,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
   Button,
   IconButton,
 } from "@material-tailwind/react";
@@ -19,7 +22,16 @@ import icon_seo from "../assests/icons8-seo.png";
 import backgroung_Image from "../assests/splash.png";
 export default function Home() {
   const [openNav, setOpenNav] = useState(false);
+  const [open, setOpen] = useState(0);
 
+  const handleOpen = (value) => {
+    setOpen(open === value ? 0 : value);
+  };
+
+  const customAnimation = {
+    mount: { scale: 1 },
+    unmount: { scale: 0.9 },
+  };
   useEffect(() => {
     window.addEventListener(
       "resize",
@@ -195,10 +207,17 @@ export default function Home() {
                       boring contests.
                     </Typography>
                     <div className="flex justify-center gap-2">
-                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white" >
+                      <Button
+                        size="md"
+                        className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white"
+                      >
                         Code Link
                       </Button>
-                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"  variant="text">
+                      <Button
+                        size="md"
+                        className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"
+                        variant="text"
+                      >
                         Deployed Link
                       </Button>
                     </div>
@@ -225,20 +244,29 @@ export default function Home() {
                       color="white"
                       className="mb-12 text-md opacity-80"
                     >
-                      Landing page for RedOwl School&apos;s erp servicves. RedQwl provides all the smart infrastructure and erp services needed for best in class school facilities.
+                      Landing page for RedOwl School&apos;s erp servicves.
+                      RedQwl provides all the smart infrastructure and erp
+                      services needed for best in class school facilities.
                     </Typography>
                     <div className="flex justify-center gap-2">
-                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white" >
+                      <Button
+                        size="md"
+                        className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white"
+                      >
                         Code Link
                       </Button>
-                      <Button size="md" className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"  variant="text">
+                      <Button
+                        size="md"
+                        className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"
+                        variant="text"
+                      >
                         Deployed Link
                       </Button>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* <div className="relative h-full w-full">
               <Image
                 src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
@@ -355,6 +383,178 @@ export default function Home() {
           </Container>
         </Box> */}
         </article>
+        <section className="flex items-center flex-col">
+          <h4>What we can do?</h4>
+          <h2 className="flex flex-col  text-[30px]  font-bold  ">Services</h2>
+          <p className="px-[10px] text-center opacity-70 mt-[1rem]">
+            Building Digital Dreams: Our Web Services Bring Your Vision to Life{" "}
+          </p>
+          <div className="flex flex-col text-[16px] font-bold gap-5 mt-6 mb-10">
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+              <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
+                <Image alt="" height={25} src={icon_frontend} />
+              </div>
+              <p>Full stack developement</p>
+            </div>
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+              <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
+                <Image alt="" height={25} src={icon_seo} />
+              </div>
+              <p>Search Engine Optimizations</p>
+            </div>
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+              <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
+                <Image alt="" height={25} src={icon_ui} />
+              </div>
+              <p>UI/UX prototyping</p>
+            </div>
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+              <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
+                <Image alt="" height={25} src={icon_ui} />
+              </div>
+              <p>Seamless User Interface</p>
+            </div>
+            <div className="flex flex-col p-[16px] bg-[#0D0D0D] rounded-md items-start gap-2">
+              <div className="bg-gradient-to-r from-0% from-[#EE4578] to-100% to-[#FF6363] p-2 rounded-md">
+                <Image alt="" height={25} src={icon_cross} />
+              </div>
+              <p>Cross platform compatibility</p>
+            </div>
+          </div>
+        </section>
+        <section className=" px-5">
+          <h2 className="flex flex-col text-center my-4 text-[25px]  font-bold  ">
+            Frequently Asked Questions
+          </h2>
+
+          <Accordion open={open === 1} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(1)}
+            >
+              What services do you offer?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              We offer custom app and web app development services tailored to
+              meet your specific needs.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 2} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(2)}
+            >
+              How much does it cost to develop an app/web app?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              The cost of app development varies depending on factors such as
+              project complexity, features, platforms, and timelines. We provide
+              personalized quotes after understanding your requirements in
+              detail. Feel free to reach out to us for a FREE consultation.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 3} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(3)}
+            >
+              How long does it take to develop an app/web app?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              The development timeline depends on the scope and complexity of
+              the project. Simple apps may take a few weeks, while more complex
+              projects can span several months. We work closely with our clients
+              to establish realistic timelines and keep them informed throughout
+              the development process.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 4} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(4)}
+            >
+              Can you help with both iOS and Android app development?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Yes, we have expertise in developing apps for both iOS and Android
+              platforms. We can build native apps specific to each platform or
+              develop hybrid apps that work on multiple platforms, depending on
+              your requirements.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 5} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(5)}
+            >
+              Do you provide ongoing support and maintenance after the app is
+              launched?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Absolutely! We offer post-launch support and maintenance services
+              to ensure your app runs smoothly. We provide various support
+              options, including bug fixes, updates, and feature enhancements,
+              based on your needs.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 6} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(6)}
+            >
+              Can you integrate third-party services into the apps/web apps?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Yes, we can integrate various third-party services, such as
+              payment gateways, social media platforms, analytics tools, and
+              more, based on your requirements. We ensure seamless integration
+              and functionality for a comprehensive app experience
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 7} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(7)}
+            >
+              What is your development process?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Our development process typically involves the following steps:
+              requirement gathering and analysis, UI/UX design, development,
+              testing, deployment, and ongoing support. We follow agile
+              methodologies, allowing for flexibility and iterative improvements
+              during the development cycle.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 8} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(8)}
+            >
+              Can you provide references or examples of your previous work?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Absolutely! We have a portfolio section on our website where you
+              can find examples of our previous projects. Additionally, we can
+              provide references upon request to give you a better understanding
+              of our clients satisfaction.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={open === 9} animate={customAnimation}>
+            <AccordionHeader
+              className="text-white font-normal hover:text-gray-400"
+              onClick={() => handleOpen(9)}
+            >
+              How do we get started with our app/web app development project?
+            </AccordionHeader>
+            <AccordionBody className="text-white font-normal hover:text-gray-400">
+              Getting started is simple! Reach out to us through our contact
+              page or by filling out the inquiry form. We&apos;ll get in touch
+              with you promptly to discuss your project requirements and guide
+              you through the next steps.
+            </AccordionBody>
+          </Accordion>
+        </section>
       </main>
     </div>
   );
