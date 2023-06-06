@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import {
   Navbar,
-  MobileNav,
+  Collapse,
   Typography,
   Button,
   IconButton,
@@ -30,7 +30,7 @@ export default function Home() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -40,7 +40,7 @@ export default function Home() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -50,7 +50,7 @@ export default function Home() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
+        color="white"
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
@@ -61,12 +61,12 @@ export default function Home() {
   );
   return (
     <div className="bg-black">
-      <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
-        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+      <Navbar className="mx-auto bg-transparent border-none max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+        <div className="container mx-auto flex items-center justify-between text-white">
           <Typography
             as="a"
             href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
+            className="mr-4 cursor-pointer py-1.5 font-bold"
           >
             DevsClash
           </Typography>
@@ -116,14 +116,21 @@ export default function Home() {
             )}
           </IconButton>
         </div>
-        <MobileNav open={openNav}>
+        <Collapse open={openNav}>
           <div className="container mx-auto">
             {navList}
-            <Button variant="gradient" size="sm" fullWidth className="mb-2">
+
+            <Button
+              variant="gradient"
+              className="rounded-lg mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
+              size="sm"
+              fullWidth
+              
+            >
               <span>Lets Connect</span>
             </Button>
           </div>
-        </MobileNav>
+        </Collapse>
       </Navbar>
       <main className="flex min-h-screen flex-col items-center justify-between  bg-primary z-[-1] tracking-wide text-white text-[16px]">
         <section className="flex flex-col relative top-4 pb-[10rem] mb-[5rem]  items-center justify-center gap-[70px]">
