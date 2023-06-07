@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import React, { useRef } from 'react';
+import axios from "axios";
 import {
   Navbar,
+  Card,
+  Input,
+  Checkbox,
   Collapse,
   Carousel,
   Typography,
@@ -12,6 +17,8 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import { useFormik } from "formik";
+import emailjs from '@emailjs/browser';
 import Link from "next/link";
 import project1 from "../assests/project-devsclash.png";
 import project2 from "../assests/project-redowl.png";
@@ -24,9 +31,28 @@ import backgroung_Image from "../assests/splash.png";
 export default function Home() {
   const [openNav, setOpenNav] = useState(false);
   const [open, setOpen] = useState(0);
-
+  const form = useRef();
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
+  };
+  const contactFormClicked = () => {};
+  const formik = useFormik({
+    initialValues: {
+      Email: "",
+      Name: "",
+      Message: "",
+    },
+    onSubmit: (values) => {
+    },
+  });
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_053iy3d', 'template_kweexvx', form.current, '00o5Rc2ipt69UwAvh')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   const customAnimation = {
@@ -47,7 +73,7 @@ export default function Home() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#contact" className="flex items-center">
           Contact Us
         </a>
       </Typography>
@@ -57,7 +83,7 @@ export default function Home() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#work" className="flex items-center">
           Our Work
         </a>
       </Typography>
@@ -67,7 +93,7 @@ export default function Home() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#FAQ" className="flex items-center">
           FAQs
         </a>
       </Typography>
@@ -90,7 +116,7 @@ export default function Home() {
             size="sm"
             className="rounded-lg hidden lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            <Link href="mailto:devsclash.social@gmail.com">
+            <Link href="#contact">
               Connect with us
             </Link>{" "}
           </Button>
@@ -142,7 +168,7 @@ export default function Home() {
               size="sm"
               fullWidth
             >
-              <Link href="mailto:devsclash.social@gmail.com">
+              <Link href="#contact">
                 Connect with us
               </Link>{" "}
             </Button>
@@ -179,12 +205,12 @@ export default function Home() {
             sx={{ color: "white" }}
             className="rounded-lg z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            <Link href="mailto:devsclash.social@gmail.com">
+            <Link href="#contact">
               Lets Work Togehter!
             </Link>{" "}
           </Button>
         </section>
-        <article className="flex  flex-col text-center items-center justify-center mt-4 mb-10">
+        <article id="work" className="flex  flex-col text-center items-center justify-center mt-4 mb-10">
           <h1 className="flex z-[20] flex-col  text-[30px]  font-bold  ">
             Our Work
           </h1>
@@ -232,7 +258,7 @@ export default function Home() {
                         className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"
                         variant="text"
                       >
-                        Deployed Link
+                        <Link href="https://devsclash.com/">Deployed Link</Link>
                       </Button>
                     </div>
                   </div>
@@ -277,7 +303,9 @@ export default function Home() {
                         className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"
                         variant="text"
                       >
-                        Deployed Link
+                        <Link href="https://redowlschools.vercel.app/">
+                          Deployed Link
+                        </Link>
                       </Button>
                     </div>
                   </div>
@@ -439,7 +467,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className=" px-5">
+        <section id="FAQ" className=" px-5">
           <h2 className="flex flex-col text-center my-4 text-[25px]  font-bold  ">
             Frequently Asked Questions
           </h2>
@@ -572,6 +600,58 @@ export default function Home() {
             </AccordionBody>
           </Accordion>
         </section>
+        <section id="contact"className="px-5"> <Card
+          color="transparent"
+          className="mt-10 text-white flex flex-col justify-center items-center"
+          shadow={false}
+        >
+          <h4  className="text-center">Still got something on your mind?</h4>
+          <h2  className="flex flex-col text-center text-[30px]  font-bold  ">
+            Contact Us
+          </h2>
+          <p className="px-[10px] text-center opacity-70 mt-[1rem]">
+            We will get back to you ASAP! Just hit that Send button.
+          </p>
+          <form  ref={form} onSubmit={sendEmail} className="mt-8 mb-2 w-80  max-w-screen-lg sm:w-96 ">
+            <div className="mb-4 flex flex-col gap-6">
+              <Input
+                size="lg"
+                id="Name"
+                name="Name"
+                className="text-white"
+                label="Name"
+                onChange={formik.handleChange}
+                value={formik.values.Name}
+              />
+              <Input
+                size="lg"
+                id="Email"
+                onChange={formik.handleChange}
+                value={formik.values.Email}
+                name="Email"
+                className="text-white"
+                label="Email"
+              />
+              <textarea
+                onChange={formik.handleChange}
+                value={formik.values.Message  }
+                rows={4}
+                cols={40}
+                id="Message"
+                name="Message"
+                className="text-white rounded-md border-white border-[1px] p-2 bg-transparent"
+                label="Message"
+                placeholder="Message"
+              />
+            </div>
+            <input type="submit"
+              className="rounded-lg hidden mt-6 lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
+              value="Send"
+            >
+            </input>
+          </form>
+        </Card></section>
+        
       </main>
     </div>
   );
