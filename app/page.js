@@ -12,6 +12,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import Link from "next/link";
 import project1 from "../assests/project-devsclash.png";
 import project2 from "../assests/project-redowl.png";
 import icon_frontend from "../assests/icons8-frontend.png";
@@ -73,8 +74,8 @@ export default function Home() {
     </ul>
   );
   return (
-    <div className="bg-black ">
-      <Navbar className="mx-0 bg-transparent border-none max-w-screen-xl py-2 px-4 lg:px-4 lg:py-4">
+    <div className="bg-[#06020f] scrollbar-hide">
+      <Navbar className="mx-0  bg-[#06020f] border-none  py-2 px-4 lg:px-4 lg:py-4">
         <div className="container mx-auto flex items-center justify-between text-white">
           <Typography
             as="a"
@@ -89,7 +90,9 @@ export default function Home() {
             size="sm"
             className="rounded-lg hidden lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-         Lets Work Togehter!
+            <Link href="mailto:devsclash.social@gmail.com">
+              Connect with us
+            </Link>{" "}
           </Button>
           <IconButton
             variant="text"
@@ -139,7 +142,9 @@ export default function Home() {
               size="sm"
               fullWidth
             >
-              <span>Lets Connect</span>
+              <Link href="mailto:devsclash.social@gmail.com">
+                Connect with us
+              </Link>{" "}
             </Button>
           </div>
         </Collapse>
@@ -153,23 +158,30 @@ export default function Home() {
             fill
           />
           <h1 className="flex flex-col z-[20] text-[46px]  font-bold  ">
-            <span className=" px-2 bg-clip-text text-transparent italic bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100%">
-              Let&apos;s bring
+            <span className=" px-2 bg-clip-text text-transparent text-center italic bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100%">
+              Let&apos;s make
             </span>{" "}
-            <span className="px-2"> UI&apos;s to life.</span>
+            <span className="px-2 text-center"> Your Vision A Reality.</span>
           </h1>
-          <p
-            className="px-[10px] z-[20] text-center opacity-60
-        "
-          >
-            Experience Web Design at It&apos;s Finest: Seamless Functionality,
-            Striking Visuals and Unforgettable User Experience
-          </p>
+          <div className="px-[10px] lg:text-[25px] w-auto z-[20] flex flex-col items-center ">
+            <p className="text-white mb-4 text-center opacity-100 lg:w-[50vw]">
+              Got a vision for next big Saas?
+              <br />
+              We are there to make it live!
+              <br />
+            </p>
+            <p className="text-white text-center opacity-60 lg:w-[65vw]">
+              Experience Web Design at It&apos;s Finest: Seamless Functionality,
+              Striking Visuals and Unforgettable User Experience
+            </p>
+          </div>
           <Button
             sx={{ color: "white" }}
             className="rounded-lg z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            Contact Us
+            <Link href="mailto:devsclash.social@gmail.com">
+              Lets Work Togehter!
+            </Link>{" "}
           </Button>
         </section>
         <article className="flex  flex-col text-center items-center justify-center mt-4 mb-10">
@@ -180,7 +192,7 @@ export default function Home() {
             Here&apos;s the display of what we have done till now.
           </p>
           <div className="relative flex flex-col items-center mt-[1.25rem] py-[1rem] h-auto w-[100vw] bg-[#1E1A25] ">
-            <div className="w-[100vw] h-[3rem] bg-black absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></div>
+            <div className="w-[100vw] h-[3rem] bg-[#06020f] absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></div>
             <Carousel className="rounded-xl relative my-4 px-2 mx-2 bg-[#1E1A25] py-[4rem]">
               <div className="px-4 lg:flex lg:flex-row justify-center items-center lg:h-auto h-full w-full">
                 <Image
@@ -211,7 +223,9 @@ export default function Home() {
                         size="md"
                         className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white"
                       >
-                        Code Link
+                        <Link href="https://github.com/Yvg2244/codeloot">
+                          Code Link
+                        </Link>{" "}
                       </Button>
                       <Button
                         size="md"
@@ -253,8 +267,11 @@ export default function Home() {
                         size="md"
                         className="justify-center items-center py-[10px] px-[20px] border-white border-[1px] bg-pink-500 rounded-md text-white"
                       >
-                        Code Link
+                        <Link href="https://github.com/Yvg2244/redowl">
+                          Code Link
+                        </Link>{" "}
                       </Button>
+
                       <Button
                         size="md"
                         className="justify-center items-center py-[10px] px-[20px] border-pink-500 border-[1px] bg-white text-pink-500 rounded-md"
@@ -273,7 +290,7 @@ export default function Home() {
                 alt="image 2"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+              <div className="absolute inset-0 grid h-full w-full items-center bg-[#06020f]/75">
                 <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
                   <Typography
                     variant="h1"
@@ -309,7 +326,7 @@ export default function Home() {
                 alt="image 3"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+              <div className="absolute inset-0 grid h-full w-full items-end bg-[#06020f]/75">
                 <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
                   <Typography
                     variant="h1"
@@ -340,7 +357,7 @@ export default function Home() {
               </div>
             </div> */}
             </Carousel>
-            <div className="w-[100vw] h-[3rem] bg-black absolute bottom-[-1rem] rounded-tl-[45%] rounded-tr-[45%]"></div>
+            <div className="w-[100vw] h-[3rem] bg-[#06020f] absolute bottom-[-1rem] rounded-tl-[45%] rounded-tr-[45%]"></div>
           </div>
           {/* <Box className="flex mt-[6rem] ">
           <Container className="relative flex flex-col items-center py-[3rem] h-auto w-[100vw] bg-[#1E1A25] ">
