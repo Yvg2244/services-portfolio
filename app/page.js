@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 import {
   Navbar,
   Card,
@@ -18,9 +19,10 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { useFormik } from "formik";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import project1 from "../assests/project-devsclash.png";
+import dp from "../assests/dp.svg";
 import project2 from "../assests/project-redowl.png";
 import icon_frontend from "../assests/icons8-frontend.png";
 import icon_cross from "../assests/icons8-cross-platform.png";
@@ -42,17 +44,25 @@ export default function Home() {
       Name: "",
       Message: "",
     },
-    onSubmit: (values) => {
-    },
+    onSubmit: (values) => {},
   });
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_053iy3d', 'template_kweexvx', form.current, '00o5Rc2ipt69UwAvh')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_053iy3d",
+        "template_kweexvx",
+        form.current,
+        "00o5Rc2ipt69UwAvh"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+        }
+      );
   };
 
   const customAnimation = {
@@ -108,7 +118,7 @@ export default function Home() {
             href="#"
             className="mr-4 cursor-pointer py-1.5 font-bold"
           >
-            DevsClash
+            Y V Gupta
           </Typography>
           <div className="hidden lg:block">{navList}</div>
           <Button
@@ -116,9 +126,7 @@ export default function Home() {
             size="sm"
             className="rounded-lg hidden lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            <Link href="#contact">
-              Connect with us
-            </Link>{" "}
+            <Link href="#contact">Connect with me !</Link>{" "}
           </Button>
           <IconButton
             variant="text"
@@ -168,9 +176,7 @@ export default function Home() {
               size="sm"
               fullWidth
             >
-              <Link href="#contact">
-                Connect with us
-              </Link>{" "}
+              <Link href="#contact">Connect with us</Link>{" "}
             </Button>
           </div>
         </Collapse>
@@ -184,38 +190,60 @@ export default function Home() {
             fill
           />
           <h1 className="flex flex-col z-[20] text-[46px]  font-bold  ">
-            <span className=" px-2 bg-clip-text text-transparent text-center italic bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100%">
-              Let&apos;s make
-            </span>{" "}
-            <span className="px-2 text-center"> Your Vision A Reality.</span>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.75,
+                delay: 0.5,
+                ease: "easeInOut",
+              }}
+              className=" px-2 bg-clip-text text-transparent text-center italic bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100%"
+            >
+              Bringing UI's to Life
+            </motion.div>{" "}
+            <motion.div
+              className="bg-white h-1 rounded-lg w-full "
+              initial={{ width: 0, x: "50%" }}
+              animate={{ width: "100%", x: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.75,
+                delay: 0.5,
+                ease: "easeInOut",
+              }}
+              className="px-2 text-center"
+            >
+              {" "}
+              Let&apos;s Make Your Vision A Reality.
+            </motion.div>
           </h1>
           <div className="px-[10px] lg:text-[25px] w-auto z-[20] flex flex-col items-center ">
-            <p className="text-white mb-4 text-center opacity-100 lg:w-[50vw]">
-              Got a vision for next big Saas?
-              <br />
-              We are there to make it live!
-              <br />
-            </p>
-            <p className="text-white text-center opacity-60 lg:w-[65vw]">
-              Experience Web Design at It&apos;s Finest: Seamless Functionality,
-              Striking Visuals and Unforgettable User Experience
-            </p>
+           <Image src={dp} height={400} width={400}></Image>
           </div>
           <Button
             sx={{ color: "white" }}
             className="rounded-lg z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
           >
-            <Link href="#contact">
-              Lets Work Togehter!
-            </Link>{" "}
+            <Link href="#contact">Lets Work Togehter!</Link>{" "}
           </Button>
         </section>
-        <article id="work" className="flex  flex-col text-center items-center justify-center mt-4 mb-10">
+        <article
+          id="work"
+          className="flex  flex-col text-center items-center justify-center mt-4 mb-10"
+        >
           <h1 className="flex z-[20] flex-col  text-[30px]  font-bold  ">
-            Our Work
+            My Work
           </h1>
           <p className="px-[10px] text-center opacity-70 mt-[1rem]">
-            Here&apos;s the display of what we have done till now.
+            Here&apos;s the display of what I have done till now.
           </p>
           <div className="relative flex flex-col items-center mt-[1.25rem] py-[1rem] h-auto w-[100vw] bg-[#1E1A25] ">
             <div className="w-[100vw] h-[3rem] bg-[#06020f] absolute top-[-1rem] rounded-bl-[45%] rounded-br-[45%]"></div>
@@ -235,6 +263,12 @@ export default function Home() {
                     >
                       DevsClash
                     </Typography>
+                    <div className="flex gap-2">
+                      <div className="py-2 px-5 bg-[#EE4578] rounded-[1rem] ">React</div>
+                      <div className="py-2 px-5 bg-[#EE4578] rounded-[1rem] ">Tailwind</div>
+                      <div className="py-2 px-5 bg-[#EE4578] rounded-[1rem] ">MongoDB</div>
+                      <div className="py-2 px-5 bg-[#EE4578] rounded-[1rem] ">Node</div>
+                    </div>
                     <Typography
                       variant="lead"
                       color="white"
@@ -600,58 +634,64 @@ export default function Home() {
             </AccordionBody>
           </Accordion>
         </section>
-        <section id="contact"className="px-5"> <Card
-          color="transparent"
-          className="mt-10 text-white flex flex-col justify-center items-center"
-          shadow={false}
-        >
-          <h4  className="text-center">Still got something on your mind?</h4>
-          <h2  className="flex flex-col text-center text-[30px]  font-bold  ">
-            Contact Us
-          </h2>
-          <p className="px-[10px] text-center opacity-70 mt-[1rem]">
-            We will get back to you ASAP! Just hit that Send button.
-          </p>
-          <form  ref={form} onSubmit={sendEmail} className="mt-8 mb-2 w-80  max-w-screen-lg sm:w-96 ">
-            <div className="mb-4 flex flex-col gap-6">
-              <Input
-                size="lg"
-                id="Name"
-                name="Name"
-                className="text-white"
-                label="Name"
-                onChange={formik.handleChange}
-                value={formik.values.Name}
-              />
-              <Input
-                size="lg"
-                id="Email"
-                onChange={formik.handleChange}
-                value={formik.values.Email}
-                name="Email"
-                className="text-white"
-                label="Email"
-              />
-              <textarea
-                onChange={formik.handleChange}
-                value={formik.values.Message  }
-                rows={4}
-                cols={40}
-                id="Message"
-                name="Message"
-                className="text-white rounded-md border-white border-[1px] p-2 bg-transparent"
-                label="Message"
-                placeholder="Message"
-              />
-            </div>
-            <input type="submit"
-              className="rounded-lg hidden mt-6 lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
-              value="Send"
+        <section id="contact" className="px-5">
+          {" "}
+          <Card
+            color="transparent"
+            className="mt-10 text-white flex flex-col justify-center items-center"
+            shadow={false}
+          >
+            <h4 className="text-center">Still got something on your mind?</h4>
+            <h2 className="flex flex-col text-center text-[30px]  font-bold  ">
+              Contact Us
+            </h2>
+            <p className="px-[10px] text-center opacity-70 mt-[1rem]">
+              We will get back to you ASAP! Just hit that Send button.
+            </p>
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="mt-8 mb-2 w-80  max-w-screen-lg sm:w-96 "
             >
-            </input>
-          </form>
-        </Card></section>
-        
+              <div className="mb-4 flex flex-col gap-6">
+                <Input
+                  size="lg"
+                  id="Name"
+                  name="Name"
+                  className="text-white"
+                  label="Name"
+                  onChange={formik.handleChange}
+                  value={formik.values.Name}
+                />
+                <Input
+                  size="lg"
+                  id="Email"
+                  onChange={formik.handleChange}
+                  value={formik.values.Email}
+                  name="Email"
+                  className="text-white"
+                  label="Email"
+                />
+                <textarea
+                  onChange={formik.handleChange}
+                  value={formik.values.Message}
+                  rows={4}
+                  cols={40}
+                  id="Message"
+                  name="Message"
+                  className="text-white rounded-md border-white border-[1px] p-2 bg-transparent"
+                  label="Message"
+                  placeholder="Message"
+                />
+              </div>
+              <input
+                type="submit"
+                className="rounded-lg hidden mt-6 lg:inline-block mb-2 z-[20] tracking-wider font-bold bg-gradient-to-r from-[#F83A3A] from-0% via-[#F13CC7] via-50% to-[#7000FF] to-100% py-[12px] px-[40px]"
+                value="Send"
+              ></input>
+            </form>
+          </Card>
+        </section>
       </main>
     </div>
   );
